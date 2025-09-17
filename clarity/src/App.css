@@ -1,2 +1,48 @@
 
 @import "tailwindcss";
+
+
+/* Definindo as variáveis de cor para os temas */
+:root {
+  --background-color: #ffffff;
+  --text-color: #333333;
+  --primary-color: #2563eb; /* blue-600 */
+  --secondary-color: #e5e7eb; /* gray-200 */
+  --accent-color: #16a34a; /* green-600 */
+}
+
+.dark {
+  --background-color: #121212;
+  --text-color: #e5e5e5;
+  --primary-color: #60a5fa; /* blue-400 */
+  --secondary-color: #4b5563; /* gray-600 */
+  --accent-color: #4ade80; /* green-400 */
+}
+
+/* Classes CSS padronizadas usando @apply */
+@layer components {
+  .btn {
+    @apply px-4 py-2 font-semibold rounded-md transition-colors duration-200;
+  }
+  .btn-primary {
+    @apply btn bg-[var(--primary-color)] text-white hover:bg-opacity-80;
+  }
+  .btn-secondary {
+    @apply btn bg-[var(--secondary-color)] text-[var(--text-color)] hover:bg-opacity-80;
+  }
+  .btn-accent {
+    @apply btn bg-[var(--accent-color)] text-white hover:bg-opacity-80;
+  }
+  .btn-danger {
+    @apply btn bg-red-500 text-white hover:bg-red-600;
+  }
+  .input-field {
+    @apply w-full p-2 border rounded-md outline-none focus:border-blue-500 bg-[var(--background-color)] text-[var(--text-color)];
+  }
+  .container-base {
+    @apply p-8 font-sans min-h-screen bg-[var(--background-color)] text-[var(--text-color)];
+  }
+  .card {
+    @apply p-6 rounded-lg shadow-md bg-[var(--secondary-color)];
+  }
+}
