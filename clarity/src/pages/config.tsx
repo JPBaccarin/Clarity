@@ -167,7 +167,7 @@ const Settings = () => {
                   <CardHeader>
                     <div className="flex items-center justify-between">
                       {editingCategory === category ? (
-                        <div className="flex items-center gap-2 w-full">
+                        <div className="flex items-center gap-2 w-full ">
                           <Input
                             value={newCategoryName}
                             onChange={(e) => setNewCategoryName(e.target.value)}
@@ -188,7 +188,7 @@ const Settings = () => {
                       ) : (
                         <>
                           <CardTitle>{category}</CardTitle>
-                          <div className="flex items-center gap-1">
+                          <div className="flex items-center gap-1 ">
                             <Tooltip>
                               <TooltipTrigger asChild>
                                 <Button variant="ghost" size="icon" onClick={() => handleStartEditing(category)}>
@@ -264,7 +264,7 @@ const Settings = () => {
                 {config.safe_paths.length > 0 ? (
                   <ul className="space-y-2">
                     {config.safe_paths.map((path) => (
-                      <li key={path} className="flex items-center justify-between p-2 border rounded-md text-sm">
+                      <li key={path} className="flex items-center justify-between p-2 border  rounded-md text-sm">
                         <span className="font-mono truncate pr-4">{path}</span>
                         <AlertDialog>
                           <AlertDialogTrigger asChild>
@@ -301,7 +301,7 @@ const Settings = () => {
           </section>
 
           {/* Ações Finais */}
-          <footer className="flex justify-end pt-4 border-t">
+          <footer className="flex justify-end pt-4  -t">
             <Button onClick={handleSave} size="lg" disabled={isSaving}>
               {isSaving ? (
                 <>
